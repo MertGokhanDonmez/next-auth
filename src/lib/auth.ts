@@ -1,6 +1,5 @@
 import Auth0Provider from "next-auth/providers/auth0";
 import type { NextAuthOptions } from "next-auth";
-// import type { JWT } from "next-auth/jwt";
 
 export const authOptions: NextAuthOptions = {
   providers: [

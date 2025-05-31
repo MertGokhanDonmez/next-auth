@@ -22,9 +22,7 @@ export default async function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
           <h1 className="text-2xl font-bold text-gray-900">Dashboard</h1>
           <div className="flex items-center space-x-4">
-            <span className="text-gray-600">
-              Hoş geldin, {session.user?.name}
-            </span>
+            <span className="text-gray-600">Welcome, {session.user?.name}</span>
             <LogoutButton />
           </div>
         </div>
@@ -54,19 +52,19 @@ export default async function Home() {
             </div>
             <div className="border-t border-gray-200 pt-4">
               <h3 className="text-sm font-medium text-gray-500 mb-2">
-                Hesap Bilgileri
+                Account Information
               </h3>
               <div className="space-y-2">
                 <p className="text-sm text-gray-600">
-                  <span className="font-medium">Durum:</span>{" "}
-                  <span className="text-green-600">Aktif</span>
+                  <span className="font-medium">Status:</span>{" "}
+                  <span className="text-green-600">Active</span>
                 </p>
                 <p className="text-sm text-gray-600">
-                  <span className="font-medium">Rol:</span>{" "}
+                  <span className="font-medium">Role:</span>{" "}
                   {isAdmin ? (
-                    <span className="text-purple-600">Yönetici</span>
+                    <span className="text-purple-600">Administrator</span>
                   ) : (
-                    <span className="text-blue-600">Kullanıcı</span>
+                    <span className="text-blue-600">User</span>
                   )}
                 </p>
               </div>
@@ -76,7 +74,7 @@ export default async function Home() {
           {/* Session Info Card */}
           <div className="bg-white rounded-lg shadow-md p-6">
             <h2 className="text-lg font-semibold text-gray-900 mb-4">
-              Oturum Bilgileri
+              Session Information
             </h2>
             <div className="bg-gray-50 rounded-lg p-4">
               <pre className="text-xs text-gray-600 overflow-x-auto">
@@ -88,7 +86,7 @@ export default async function Home() {
           {/* Quick Actions Card */}
           <div className="bg-white rounded-lg shadow-md p-6">
             <h2 className="text-lg font-semibold text-gray-900 mb-4">
-              Hızlı İşlemler
+              Quick Actions
             </h2>
             <div className="space-y-3">
               {isAdmin && (
@@ -115,7 +113,7 @@ export default async function Home() {
                       d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
                     />
                   </svg>
-                  Yönetici Paneli
+                  Admin Panel
                 </Link>
               )}
               <Link
@@ -135,7 +133,7 @@ export default async function Home() {
                     d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
                   />
                 </svg>
-                Sayfayı Yenile
+                Refresh Page
               </Link>
             </div>
           </div>

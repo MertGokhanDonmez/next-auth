@@ -11,14 +11,13 @@ export default function LoginPage() {
       <div className="max-w-md w-full space-y-8 p-8 bg-white rounded-lg shadow-lg">
         <div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Hesabınıza giriş yapın
+            Log in or Sign up
           </h2>
           {error && (
             <div className="mt-2 text-center text-sm text-red-600">
-              {error === "AccessDenied" &&
-                "Giriş reddedildi. Lütfen tekrar deneyin."}
-              {error === "Configuration" && "Sunucu yapılandırma hatası."}
-              {error === "Verification" && "Doğrulama hatası."}
+              {error === "AccessDenied" && "Access denied. Please try again."}
+              {error === "Configuration" && "Server configuration error."}
+              {error === "Verification" && "Verification error."}
             </div>
           )}
         </div>
@@ -27,7 +26,7 @@ export default function LoginPage() {
             onClick={() => signIn("auth0", { callbackUrl: "/dashboard" })}
             className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
           >
-            Auth0 ile Giriş Yap
+            Sign in with Auth0
           </button>
         </div>
       </div>
